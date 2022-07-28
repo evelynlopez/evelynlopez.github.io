@@ -6,19 +6,19 @@ let pAlert= document.getElementById("text-alert");
 var usuarios =[
     {
         username:'mario.parra@gmail.com',
-        pass:'parra123',
+        pass:'parraM67',
         name:' Mario Parra',
         saldo: '300'
     },
     {
         username:'eve123@yahoo.com',
-        pass:'eve12345',
+        pass:'eveLop45',
         name:'Eve Zazueta',
         saldo: '100'
     },
     {
         username:'pinedo32@hotmail.com',
-        pass:'pinedo123',
+        pass:'Pinedo54',
         name:'Ernesto Pinedo',
         saldo: '180'
     }

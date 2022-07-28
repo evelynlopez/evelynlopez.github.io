@@ -14,21 +14,10 @@ let movimientos=[
     nuevoSaldo: 'Nuevo saldo'
   }
 ];
-function valideKey(evt){		
-    // code is the decimal ASCII representation of the pressed key.
-    var code = (evt.which) ? evt.which : evt.keyCode;
-    if(code==8) { // backspace.
-      return true;
-    } else if(code>=48 && code<=57) { // is a number.
-      if((input.value.length==0) && code == 48){
-        input.value="";
-        return false
-      }else{
-        return true;
-      }
-    } else{ // other keys.
-      return false;
-    }
+function valideKey(evt){
+    if((input.value[0]==0)){
+      input.value="";
+    }    
 }
 function bienvenida(){
     document.getElementById("bienvenido").innerHTML=localStorage.getItem("name")
@@ -189,5 +178,3 @@ function regresar(){
   document.getElementById("operaciones").style.display="block"
 }
   
-
-

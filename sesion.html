@@ -22,7 +22,7 @@
                         <p id="descripcion">Selecciona una operaci&oacute;n-></p>
                         <p id="recordatorio">Recuerda, no se aceptan operaciones en centavos</p>
                         <p id="monto"></p>
-                        <input type="text" id="operaciones-cliente" class="mb-4" onkeypress="return valideKey(event);" maxlength="3">
+                        <input type="text" id="operaciones-cliente" class="mb-4" maxlength="3" onpaste="return false;" onCopy="return false" onCut="return false" oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeypress="valideKey(event);">
                         <div class="alert alert-danger" role="alert" id="alert-msg">
                             <p id="text-alert"></p>
                         </div>
