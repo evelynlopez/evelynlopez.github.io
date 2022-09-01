@@ -158,7 +158,7 @@ function addNewCharacter(){ //Agrega nuevos personajes a la lista de espera
     if(nombre == '' || altura ==''){
         alert('Completa el formulario');
     }else{
-        agregarPersonaje.agregarAlistaDeEspera(nombre,altura,genero,colorOjos,urlImg); 
+        agregarPersonaje.agregarAlistaDeEspera(nombre,genero,altura,colorOjos,urlImg); 
         container.innerHTML = `
         <div class="card" style="width: 18rem;margin:auto;">
             <div class="card-body">
