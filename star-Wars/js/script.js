@@ -19,6 +19,7 @@ class newCharacter {
         localStorage.setItem('perAceptados',JSON. stringify(this.personajesAceptados));
         this.nuevoPersonaje.shift();
         container.innerHTML = '';
+        validarPersonajes();
     }
     rechazarPersonaje(){
         this.nuevoPersonaje.shift();
@@ -32,6 +33,10 @@ class newCharacter {
             </div>
         </div>
         `
+        setTimeout(function() {
+            validarPersonajes();
+        }, 1000);
+        
     }
 }
 let agregarPersonaje = new newCharacter;
