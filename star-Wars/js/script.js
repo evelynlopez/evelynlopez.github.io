@@ -113,7 +113,7 @@ function search_character_button_click() { //muestra la info de cada peronsaje
         }      
     }
 }
-function search_character(character_name) {//Valida si existen los perosnajes
+function search_character(character_name) {//Valida si existen los personajes
     for(let i = 0; i<characters.length;i++) {
         if(characters[i].name == character_name) {
              return characters[i]
@@ -196,6 +196,65 @@ function validarPersonajes(){ // valida personajes es espera de ser aceptados
             <div class="card-body">
                 <p>
                     <span" style="color:red;">No hay personajes por validar</span><br />
+                </p>
+            </div>
+        </div>
+        `
+    }
+}
+function mostrarOldPersonajes(){
+    container.innerHTML = '';
+    for(let i = 0; i<characters.length;i++) {
+        var p = document.createElement("div")
+        var card = document.getElementById("divContainerCard");
+        p.setAttribute("id",`div${i}` );
+        card.appendChild(p);
+        let divCard = document.getElementById(`div${i}`);
+        divCard.innerHTML = `
+        <div class="card" style="width: 18rem;margin:auto;">
+            <img class="card-img-top" src="${characters[i].img}" alt="Card image cap">
+            <div class="card-body">
+                <p>
+                    <span style="color: red">Nombre: ${characters[i].name}</span><br />
+                    <span>Género: ${characters[i].gender}</span><br />
+                    <span>Altura: ${characters[i].height}</span><br />
+                    <span>Color de ojos: ${characters[i].eye_color}</span>
+                </p>
+            </div>
+        </div>
+        `
+    }
+}
+function mostrarNuevosPersajes(){
+    let Aceptados= JSON.parse(localStorage.getItem("perAceptados"))
+    if(Aceptados){
+        container.innerHTML = '';
+        for(let i = 0; i<Aceptados.length;i++) {
+                var p = document.createElement("div")
+                var card = document.getElementById("divContainerCard");
+                p.setAttribute("id",`div${i}` );
+                card.appendChild(p);
+                let divCard = document.getElementById(`div${i}`);
+                divCard.innerHTML = `
+                <div class="card" style="width: 18rem;margin:auto;">
+                    <img class="card-img-top" src="${Aceptados[i].img}" alt="Card image cap">
+                    <div class="card-body">
+                        <p>
+                            <span style="color: red">Nombre: ${Aceptados[i].name}</span><br />
+                            <span>Género: ${Aceptados[i].gender}</span><br />
+                            <span>Altura: ${Aceptados[i].height}</span><br />
+                            <span>Color de ojos: ${Aceptados[i].eye_color}</span>
+                        </p>
+                    </div>
+                </div>
+                `
+        }
+    }else{
+        container.innerHTML = `
+        <div class="card" style="width: 18rem;margin:auto;">
+            <div class="card-body">
+                <p>
+                    <span" style="color:red;">No hay nuevos personajes por mostrar</span><br />
                 </p>
             </div>
         </div>
