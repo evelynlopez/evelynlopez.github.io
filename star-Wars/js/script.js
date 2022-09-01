@@ -165,6 +165,7 @@ function addNewCharacter(){ //Agrega nuevos personajes a la lista de espera
                 <p id="errormsg">
                     <span style="color:#0dcaf0">Personaje en revisión, recuerda que el periodo de aceptación es de 2 días</span><br /><br />
                     <button type="button" class="btn btn-outline-info" onclick="infoCharacter()">Agregar nuevo personaje</button><br />
+                    <button type="button" class="btn btn-outline-info" onclick="validarPersonajes()">Validar nuevos personajes</button>
                 </p>
                 <p id="add"></p>
             </div>
@@ -182,8 +183,8 @@ function validarPersonajes(){ // valida personajes es espera de ser aceptados
                     <span">Nombre: ${agregarPersonaje.nuevoPersonaje[0].name}</span><br />
                     <span>Género: ${agregarPersonaje.nuevoPersonaje[0].gender}</span><br />
                     <span>Altura: ${agregarPersonaje.nuevoPersonaje[0].height}</span><br />
-                    <span>Color de ojos: ${agregarPersonaje.nuevoPersonaje[0].eye_color}</span>
-                    <button type="button" class="btn btn-outline-info" onclick="agregarPersonaje.aceptarPersonaje()">Aceptar personaje</button><br />
+                    <span>Color de ojos: ${agregarPersonaje.nuevoPersonaje[0].eye_color}</span><br />
+                    <button type="button" class="btn btn-outline-info" onclick="agregarPersonaje.aceptarPersonaje()">Aceptar personaje</button><br /><br />
                     <button type="button" class="btn btn-outline-info" onclick="agregarPersonaje.rechazarPersonaje()">Rechazar personaje</button><br />
                 </p>
             </div>
