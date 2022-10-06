@@ -2,8 +2,8 @@ const uri='https://fedeperin-harry-potter-api.herokuapp.com/'
 const urlCasas="https://hp-api.herokuapp.com/api/characters"
 
 //obtiene todos los personajes de la api
-let getPersonajesPrincipales=(tipo)=>{
-    fetch(`${uri}${tipo}`)
+let getPersonajesPrincipales=async (tipo)=>{
+    await fetch(`${uri}${tipo}`)
    .then((res) => res.json())
    .then((data) => {
         data.forEach(index =>{
@@ -20,8 +20,8 @@ let getPersonajesPrincipales=(tipo)=>{
 }
 
 //funcion obtiene todos los hechizos de la api
-let getHechizos=(tipo)=>{
-    fetch(`${uri}${tipo}`)
+let getHechizos=async(tipo)=>{
+    await fetch(`${uri}${tipo}`)
     .then((res) => res.json())
     .then((data) => {
         data.forEach(index =>{
@@ -49,8 +49,8 @@ let clickHechizos=()=>{
     });
 }
 //muestra el uso que tiene cada hechizo al darl click sobre el
-let mostrarUso=(nombreHechizo, tipo)=>{
-    fetch(`${uri}${tipo}`)
+let mostrarUso=async (nombreHechizo, tipo)=>{
+    await fetch(`${uri}${tipo}`)
     .then((res) => res.json())
     .then((data) => {
         data.forEach(index =>{
@@ -64,8 +64,8 @@ let mostrarUso=(nombreHechizo, tipo)=>{
 
 
 //funcion obtiene todos los libros de la api
-let getLibros=(tipo)=>{
-    fetch(`${uri}${tipo}`)
+let getLibros= async (tipo)=>{
+    await fetch(`${uri}${tipo}`)
     .then((res) => res.json())
     .then((data) => {
         data.forEach(index =>{
@@ -85,9 +85,9 @@ let getLibros=(tipo)=>{
 
 
 //obtiene información de la api de acuerdo al input del buscador
-let getCasaPersonaje=()=>{
+let getCasaPersonaje=async()=>{
     let getPersonaje=document.getElementById("search").value;
-    fetch(urlCasas)
+    await fetch(urlCasas)
     .then((res) => res.json())
     .then((data) => {
         let search=toUppercase(getPersonaje.toLowerCase())
